@@ -1,0 +1,29 @@
+.card-change {
+    cursor: pointer;
+    opacity: 0.3;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    transition: .3s;
+  }
+  
+  .card-change_active {
+    opacity: 1;
+  }
+  
+  .card-view-change {
+    display: flex;
+  }
+  
+  .card-change__line {
+    background-image: url('../../../assets/img/line.png');
+  }
+  
+  .card-change__tile {
+    background-image: url('../../../assets/img/tile.png');
+  }
+  
+  .card-change:hover{
+    opacity: .8;
+  }
