@@ -1,0 +1,30 @@
+.main-page {
+  max-width: 1400px;
+  width: 96vw;
+  height: 590px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-container {
+  width: 75%;
+  height: 100%;
+}
+
+.card-container__head {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-found__search {
+  width: 100px;
+  height: 25px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+}
