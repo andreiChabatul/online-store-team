@@ -1,0 +1,12 @@
+.card-container__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  overflow: auto;
+  height: 88%;
+}
+
+.card-container__wrapper_empty {
+  font-size: 30px;
+  color: var(--COLOR_FONT_LIGHT);
+}
