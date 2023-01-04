@@ -1,0 +1,25 @@
+.product-img-grand {
+  width: 70%;
+  border-radius: 2vw;
+}
+.product-img-slide {
+  width: 10%;
+  border-radius: 1vw;
+}
+.active-slide {
+  border: 0.15vw solid rgba(210, 112, 7, 0.927);
+}
+.prodact-photos {
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+  max-width: 50vw;
+}
+.slides {
+  display: flex;
+  justify-content: space-around;
+  gap: 1vw;
+}
+.grand-foto {
+  text-align: center;
+}

@@ -1,0 +1,41 @@
+.card-container {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 2vw 2vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+  background-color: #dcdcdc;
+}
+.product-data {
+  display: flex;
+  justify-content: space-around;
+  gap: 2vw;
+}
+.text {
+  font-size: 2vw;
+  font-family: sans-serif;
+}
+.title {
+  font-size: 4vw;
+  font-family: sans-serif;
+}
+.prodact-info,
+.prodact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+}
+.buttons-container {
+  display: flex;
+  gap: 2vw;
+}
+.button {
+  border-radius: 10px;
+  padding: 1vw 2vw;
+  color: aliceblue;
+  background: linear-gradient(270deg, #f08d19 0%, #ff522f 100%);
+}
+.button:hover {
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+}
