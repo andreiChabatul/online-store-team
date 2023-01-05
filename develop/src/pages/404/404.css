@@ -1,0 +1,40 @@
+.container-404 {
+  height: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container-404_text {
+  padding-top: 5px;
+  text-align: center;
+  width: 50vw;
+  height: 10vh;
+  background: var(--COLOR_BACKGROUND_GREY);
+  border-radius: 10px;
+  border: solid 2px var(--COLOR_BACKGROUND_BLACK);
+  text-transform: uppercase;
+  font-size: 4vw;
+  color: var(--COLOR_ACTIVE);
+}
+
+.page_button {
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  background: var(--COLOR_BACKGROUND_GREY);
+  border-radius: 10px;
+  border: solid 2px var(--COLOR_BACKGROUND_BLACK);
+  height: 35px;
+  width: 120px;
+  text-transform: uppercase;
+  color: var(--COLOR_ACTIVE);
+  transition: .4s;
+}
+
+.page_button:hover {
+  color: var(--COLOR_BACKGROUND_GREY);
+  background: var(--BUTTON_ACTIVE);
+  transform: scale(1.1);
+}
