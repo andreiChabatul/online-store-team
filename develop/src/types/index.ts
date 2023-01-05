@@ -106,14 +106,41 @@ export interface IQueryPatametr {
 
 export interface IFilterText {
     name: string,
-    quantity: number,
-    check: boolean,
+    quantity: number
+}
+
+export interface IIsCheckInput {
+    name: boolean,
+    phone: boolean,
+    address: boolean,
+    email: boolean,
+    numberCard: boolean,
+    dataCard: boolean,
+    CVV: boolean,
 }
 
 export interface IObjFilter {
     [index: string]: IFilterText,
+}
 
+export interface IPopUpItem {
+    readonly name: IsCheck;
+    readonly regEx: string;
+    readonly placeHolder: string;
+    readonly maxLenght: string;
+}
+
+export interface IComponentPopUpItem {
+    obj: IPopUpItem;
+    Ischeck: boolean;
+    inputContainer: HTMLDivElement;
+    textResult: HTMLParagraphElement;
+    input: HTMLInputElement;
+    render(): HTMLDivElement;
+    check(value: string): void;
+    update(): void;
 }
 
 export type searchQuery = 'brand' | 'title' | 'description' | 'category';
 export type sortQuery = 'price' | 'rating' | 'discountPercentage';
+export type IsCheck = 'name' | 'phone' | 'address' | 'email' | 'numberCard' | 'dataCard' | 'CVV';
