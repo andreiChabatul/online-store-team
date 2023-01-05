@@ -118,18 +118,19 @@ class State {
         };
         this.search = '';
         this.sort = 'price-ASC';
+        this.changeData = [...this.data];
         updateUrlMain.reset();
     }
 
     filterFunc(): void {
-        let sortData: IProduct[] = this.data;
+        let sortData: IProduct[] = [...this.data];
         sortData = filterWork(sortData, 'category', this.filter.category);
         sortData = filterWork(sortData, 'brand', this.filter.brand);
         sortData = filterWorkNumber(sortData, 'price', this.filterNumber.price);
         sortData = filterWorkNumber(sortData, 'stock', this.filterNumber.stock);
         this.search ? (sortData = search(sortData, this.search)) : '';
         this.pagination.selectPage = 0;
-        this.changeData = sortData;
+        this.changeData = [...sortData];
         this.update();
     }
 
@@ -166,7 +167,8 @@ class State {
     }
 
     getInitData() {
-        return this.data;
+        const sortInitData = [...this.data];
+        return sortInitData.sort((a, b) => a.id - b.id);
     }
 
     setBig(boolean: boolean): void {
@@ -192,7 +194,7 @@ class State {
     }
 
     update() {
-        return this.actions.forEach((subs) => subs.update());
+        this.actions.forEach((subs) => subs.update());
     }
 
     setFilter(arr: IFilter) {
