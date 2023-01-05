@@ -1,21 +1,4 @@
 class CreateElement {
-    createElement(
-        tag: string,
-        cssClass: string,
-        value?: string,
-        text?: string,
-        id?: string,
-        type?: string
-    ): HTMLElement {
-        const element = document.createElement(tag);
-        element.className = cssClass;
-        value ? element.setAttribute('value', value) : '';
-        text ? (element.textContent = text) : '';
-        id ? (element.id = id) : '';
-        type ? element.setAttribute('type', type) : '';
-        return element;
-    }
-
     createImgElement(cssClass: string, src?: string, id?: string): HTMLImageElement {
         const element = document.createElement('img');
         element.className = cssClass;
