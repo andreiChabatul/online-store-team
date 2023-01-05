@@ -1,41 +1,52 @@
-.card-container {
-  max-width: 1920px;
+.moreinfo-card-container {
+  max-width: 50vw;
+  max-height: 30vw;
   margin: 0 auto;
-  padding: 2vw 2vw;
+  padding: 1vw 1vw;
   display: flex;
   flex-direction: column;
-  gap: 2vw;
-  background-color: #dcdcdc;
+  gap: 0.5vw;
+  background-color: var(--COLOR_BACKGROUND);
+  border: 2px solid var(--COLOR_BACKGROUND_BLACK);
+  border-radius: 2vw;
 }
-.product-data {
+.moreinfo-product-data {
   display: flex;
   justify-content: space-around;
-  gap: 2vw;
+  gap: 1vw;
 }
-.text {
-  font-size: 2vw;
+.moreinfo-text {
+  font-size: 0.8vw;
   font-family: sans-serif;
+  color: var(--COLOR_FONT_BLACK);
 }
-.title {
+.moreinfo-title {
   font-size: 4vw;
   font-family: sans-serif;
 }
-.prodact-info,
-.prodact-info-list {
+.moreinfo-prodact-info,
+.moreinfo-prodact-info-list {
   display: flex;
   flex-direction: column;
-  gap: 2vw;
+  gap: 1vw;
 }
-.buttons-container {
+.moreinfo-buttons-container {
   display: flex;
-  gap: 2vw;
+  gap: 1vw;
 }
-.button {
+.moreinfo-button {
   border-radius: 10px;
-  padding: 1vw 2vw;
-  color: aliceblue;
-  background: linear-gradient(270deg, #f08d19 0%, #ff522f 100%);
+  padding: 0.5vw 1vw;
+  color: var(--COLOR_BACKGROUND);
+  background: var(--COLOR_DEFAULT);
 }
-.button:hover {
-  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+.moreinfo-button:hover {
+  background: var(--BUTTON_ACTIVE);
+  transform: scale(1.05);
+}
+.moreinfo-item {
+  font-weight: bold;
+}
+.moreinfo-item-value {
+  font-weight: 400;
 }
