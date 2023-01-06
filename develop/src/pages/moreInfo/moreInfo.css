@@ -1,3 +1,8 @@
+.moreinfo-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vw;
+}
 .moreinfo-card-container {
   max-width: 50vw;
   max-height: 30vw;
@@ -49,4 +54,12 @@
 }
 .moreinfo-item-value {
   font-weight: 400;
+}
+.moreinfo-bread-crumb-cont {
+  display: flex;
+  justify-content: center;
+  gap: 1vw;
+}
+.moreinfo-bread-crumb-item {
+  text-transform: uppercase;
 }

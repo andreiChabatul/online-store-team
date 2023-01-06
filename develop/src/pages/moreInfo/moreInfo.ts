@@ -10,6 +10,7 @@ export default class moreInfoCard implements IRenderComponent {
     this.obj = obj;
   }
   render(): HTMLDivElement {
+    const moreinfoCardContainer = CreateElement.createDivElement('moreinfo-container');
     const cardContainer = CreateElement.createDivElement('moreinfo-card-container');
 
     const prodactTitle = CreateElement.createDivElement('moreinfo-prodact-title');
@@ -40,6 +41,18 @@ export default class moreInfoCard implements IRenderComponent {
     const prodactInfoSpanItem6 = CreateElement.createSpanElement(' moreinfo-text moreinfo-item-value', `${this.obj.brand}`);
     const prodactInfoSpanItem7 = CreateElement.createSpanElement(' moreinfo-text moreinfo-item-value', `${this.obj.category}`);
 
+    const breadCrumbCont = CreateElement.createDivElement('moreinfo-bread-crumb-cont');
+    const breadCrumbItem1 = CreateElement.createParagraphElement('moreinfo-bread-crumb-item moreinfo-text', 'Store');
+    const breadCrumbItem2 = CreateElement.createParagraphElement('moreinfo-bread-crumb-item moreinfo-text', `${this.obj.category}`);
+    const breadCrumbItem3 = CreateElement.createParagraphElement('moreinfo-bread-crumb-item moreinfo-text', `${this.obj.brand}`);
+    const breadCrumbItem4 = CreateElement.createParagraphElement('moreinfo-bread-crumb-item moreinfo-text', `${this.obj.title}`);
+    const breadCrumbSeparator1 = CreateElement.createParagraphElement('moreinfo-text', '>>');
+    const breadCrumbSeparator2 = CreateElement.createParagraphElement('moreinfo-text', '>>');
+    const breadCrumbSeparator3 = CreateElement.createParagraphElement('moreinfo-text', '>>');
+
+    moreinfoCardContainer.append(breadCrumbCont, cardContainer);
+
+    breadCrumbCont.append(breadCrumbItem1, breadCrumbSeparator1, breadCrumbItem2, breadCrumbSeparator2, breadCrumbItem3, breadCrumbSeparator3, breadCrumbItem4);
 
     cardContainer.append(prodactTitle);
     prodactTitle.append(h3);
@@ -61,6 +74,6 @@ export default class moreInfoCard implements IRenderComponent {
     prodactInfoItem6.append(prodactInfoSpanItem6);
     prodactInfoItem7.append(prodactInfoSpanItem7);
     buttonsContainer.append(addButton, buyButton);
-    return cardContainer;
+    return moreinfoCardContainer;
   }
 }
