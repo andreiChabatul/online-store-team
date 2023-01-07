@@ -17,7 +17,7 @@
   width: 100%;
   height: 160px;
   border: solid 2px #E8E8E8;
-  row-gap: 10px;
+  gap: 10px;
 }
 
 .card-product__title {
@@ -32,7 +32,7 @@
 
 .card-product__sale {
   padding: 1px 5px;
-  background: linear-gradient(to right, var(--COLOR_DEFAULT) 0, #fefcea 55%, #fefcea 98%);
+  background: linear-gradient(to right, var(--COLOR_DEFAULT) 0, var(--COLOR_BACKGROUND_GREY) 55%, var(--COLOR_BACKGROUND) 98%);
 }
 
 .card-product__rating_line {
@@ -76,7 +76,12 @@
   color: var(--COLOR_FONT_BLACK);
 }
 
-.card-product__button {
+.card-product__button_line {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-product__button_tile {
   display: flex;
   flex-direction: column;
 }
@@ -126,3 +131,33 @@
   background-color: var(--BUTTON_ACTIVE);
   transform: scale(1.05);
 }
+
+@media (max-width: 500px) {
+
+  .card-product-description_line {
+    display: none;
+  }
+
+  .card-product__button_line {
+    display: flex;
+    flex-direction:unset;
+    grid-row-start: 5;
+    grid-column-start: 1;
+    position: relative;
+    bottom: -70px;
+  }
+
+  .card-product__price_line {
+    grid-column-start: 2;
+    grid-row-start: 1;
+  }
+  
+  .card-product_line {
+    height: 220px;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+}
+
+

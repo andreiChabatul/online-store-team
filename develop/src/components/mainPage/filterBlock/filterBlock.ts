@@ -10,10 +10,10 @@ export default class FilterBlock implements IRenderComponent {
     render(): HTMLDivElement {
         const cardFilter = CreateElement.createDivElement('filter-block-container');
         const filterButtonContainer = CreateElement.createDivElement('filter-block-container__button');
-        const categoryFilter = CreateElement.createDivElement('filter-block-container__one');
-        const brandFilter = CreateElement.createDivElement('filter-block-container__one');
-        const priceFilter = CreateElement.createDivElement('filter-block-container__two');
-        const stockFilter = CreateElement.createDivElement('filter-block-container__two');
+        const categoryFilter = CreateElement.createDivElement('filter-block-container__one block__category');
+        const brandFilter = CreateElement.createDivElement('filter-block-container__one block__brand');
+        const priceFilter = CreateElement.createDivElement('filter-block-container__two block__price');
+        const stockFilter = CreateElement.createDivElement('filter-block-container__two block__stock');
         const categoryFilterTitle = CreateElement.createParagraphElement('filter-block-container_title', 'Category');
         const brandFilterTitle = CreateElement.createParagraphElement('filter-block-container_title', 'Brand');
         const priceFilterTitle = CreateElement.createParagraphElement('filter-block-container_title', 'Price');
@@ -30,7 +30,15 @@ export default class FilterBlock implements IRenderComponent {
             State.resetFilter();
             router.navigateTo('');
         });
-        buttonCopy.addEventListener('click', () => navigator.clipboard.writeText(window.location.href));
+        buttonCopy.addEventListener('click', () => {
+            buttonCopy.textContent = 'Copy!';
+            buttonCopy.classList.toggle('filter-button_active');
+            navigator.clipboard.writeText(window.location.href);
+            setTimeout(() => {
+                buttonCopy.textContent = 'Copy Link';
+                buttonCopy.classList.toggle('filter-button_active');
+            }, 1500);
+        });
 
         filterButtonContainer.append(buttonReset, buttonCopy);
         categoryFilter.append(categoryFilterTitle, filterCategory.get());

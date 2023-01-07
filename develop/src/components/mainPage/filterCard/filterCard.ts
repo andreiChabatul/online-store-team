@@ -20,7 +20,6 @@ export default class FilterCard implements IComponentUpdate {
         for (const key in this.obj) {
             result.push(this.createItemFilter(this.obj[key]));
         }
-        this.update();
         return result;
     }
 
@@ -32,6 +31,7 @@ export default class FilterCard implements IComponentUpdate {
 
     get(): HTMLDivElement {
         this.fill();
+        this.update();
         return this.filterContainer;
     }
 

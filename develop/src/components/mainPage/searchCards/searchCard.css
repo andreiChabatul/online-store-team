@@ -33,3 +33,16 @@
 .card-search__reset_active {
   opacity: 1;
 }
+
+
+@media (max-width: 1200px) {
+  .card-search__input {
+    width: 150px;
+  }
+}
+
+@media (max-width: 650px) {
+  .card-search__input {
+    width: 120px;
+  }
+}
