@@ -1,0 +1,47 @@
+.promo-search {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.promo-search__input {
+  height: 20px;
+  width: 180px;
+  border: 2px solid var(--COLOR_BACKGROUND_BLACK);
+  border-radius: 10px;
+  padding: 0 5%;
+}
+
+.promo-search__input::placeholder {
+  color: var(--COLOR_BACKGROUND_BLACK);
+  text-align: center;
+}
+
+.promo-search__reset {
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: -14px;
+  width: 14px;
+  height: 14px;
+  background-size: cover;
+  background-image: url("../../../../assets/img/resetInput.png");
+  transition: .3s;
+  opacity: 0;
+}
+
+.promo-search__reset_active {
+  opacity: 1;
+}
+
+@media (max-width:1150px) {
+  .promo-search__input {
+    width: 80%;
+  }
+}
+
+@media (max-width:900px) {
+  .promo-search__input {
+    width: 250px;
+  }
+}

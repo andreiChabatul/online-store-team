@@ -1,0 +1,15 @@
+.promo-check {
+  width: 90%;
+  border: solid 2px var(--COLOR_BACKGROUND_BLACK);
+  border-radius: 10px;
+  display: flex;
+  height: 40px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+
+.promo_closeActive {
+  display: none;
+}
