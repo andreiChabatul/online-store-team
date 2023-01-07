@@ -1,4 +1,4 @@
-import { IPopUpItem, IPromoCode } from '../types/index';
+import { IPopUpItem, IPromoCode, searchField } from '../types/index';
 import mirCard from '../assets/img/mirCard.png';
 import sberCard from '../assets/img/sberCard.png';
 import tinCard from '../assets/img/tinCard.png';
@@ -70,3 +70,4 @@ export const POP_UP_CARD: IPopUpItem[] = [
 ];
 export const CARD_IMG: string[] = [mirCard, tinCard, sberCard];
 export const eventsInput: string[] = ['blur', 'input', 'change'];
+export const SEARCH_FIELD: searchField[] = ['title', 'description', 'brand', 'category'];

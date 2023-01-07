@@ -53,6 +53,7 @@ export interface IRenderComponent {
 
 export interface IRenderComponentForm {
     div?: HTMLDivElement;
+    update?(value: string): void;
     render(): HTMLFormElement;
 }
 
@@ -144,3 +145,6 @@ export interface IComponentPopUpItem {
 export type searchQuery = 'brand' | 'title' | 'description' | 'category';
 export type sortQuery = 'price' | 'rating' | 'discountPercentage';
 export type IsCheck = 'name' | 'phone' | 'address' | 'email' | 'numberCard' | 'dataCard' | 'CVV';
+export type priceStock = 'price' | 'stock';
+export type brandCategory = 'brand' | 'category';
+export type searchField = 'title'| 'description'| 'brand'| 'category';
