@@ -1,0 +1,26 @@
+.popup-card-container {
+  width: 300px;
+  position: relative;
+}
+
+.popup-card-container__img {
+  width: 100%;
+}
+
+.popup-card-container__number {
+  position: absolute;
+  left: 8px;
+  top: 57px;
+}
+
+.popup-card-container__cvv {
+  position: absolute;
+  right: 18px;
+  top: 73px;
+}
+
+.popup-card-container__data {
+  position: absolute;
+  left: 8px;
+  bottom: 29px;
+}

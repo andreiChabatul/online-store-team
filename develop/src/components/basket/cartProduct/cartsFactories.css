@@ -1,0 +1,14 @@
+.carts-container {
+  height: 88%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width:1150px) {
+
+  .carts-container {
+    overflow: unset;
+  }
+}
