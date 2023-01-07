@@ -1,6 +1,7 @@
 import State from '../../../State/State';
 import { IComponentUpdate } from '../../../types/index';
 import CreateElement from '../../../utils/CreateElement';
+import './foundBlock.css';
 
 export default class FoundProduct implements IComponentUpdate {
     foundProduct: HTMLDivElement;
@@ -8,11 +9,17 @@ export default class FoundProduct implements IComponentUpdate {
 
     constructor() {
         this.foundProduct = CreateElement.createDivElement('card-container__found');
-        this.selectFoundAmount = CreateElement.createSpanElement('card-found__amount', State.getData().length);
+        this.selectFoundAmount = CreateElement.createSpanElement(
+            'card-found__amount card-found_text',
+            State.getData().length
+        );
     }
 
     render(): void {
-        const selectFoundTitle = CreateElement.createSpanElement('card-found__title', 'Found product:');
+        const selectFoundTitle = CreateElement.createSpanElement(
+            'card-found__title card-found_text',
+            'Found product: '
+        );
         this.foundProduct.append(selectFoundTitle, this.selectFoundAmount);
     }
 

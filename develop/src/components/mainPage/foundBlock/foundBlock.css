@@ -1,0 +1,5 @@
+.card-found_text{
+    color: var( --COLOR_FONT_BLACK);
+    font-size: 16px;
+    font-weight: bold;
+}

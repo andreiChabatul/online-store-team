@@ -5,6 +5,7 @@ import { addBasket } from '../../../utils/AdditionalFunction';
 import RatingStar from '../../../common-components/ratingStar/ratingStar';
 import { IProduct, IRenderComponent } from '../../../types/index';
 import './productsCard.css';
+import router from '../../../router/router';
 
 export default class ProductCard implements IRenderComponent {
     obj: IProduct;
@@ -38,7 +39,7 @@ export default class ProductCard implements IRenderComponent {
             `card-product__price_${select} card-product__price`,
             `Price: ${this.obj.price} $`
         );
-        const cardButton = CreateElement.createDivElement(`card-product__button_${select} card-product__button`);
+        const cardButton = CreateElement.createDivElement(`card-product__button_${select}`);
 
         cardProductRating.append(ratingStar);
         cardProduct.append(
@@ -51,8 +52,8 @@ export default class ProductCard implements IRenderComponent {
             cardDescription
         );
 
-        const buttonInfo = CreateElement.createButtonElement('button-product', 'more info', this.obj.id);
-        const buttonBasket = CreateElement.createButtonElement('button-product', 'add to cart', this.obj.id);
+        const buttonInfo = CreateElement.createButtonElement('button-product', 'more info');
+        const buttonBasket = CreateElement.createButtonElement('button-product', 'add to cart');
 
         if (StateBasket.getBasketId().includes(this.obj.id)) {
             buttonBasket.textContent = 'drop from cart';
@@ -60,7 +61,10 @@ export default class ProductCard implements IRenderComponent {
         }
 
         buttonBasket.addEventListener('click', () => {
-            addBasket(buttonBasket.id);
+            addBasket(this.obj.id);
+        });
+        buttonInfo.addEventListener('click', () => {
+            router.navigateTo(`product-details/${Number(this.obj.id)}`);
         });
         cardButton.append(buttonInfo, buttonBasket);
 

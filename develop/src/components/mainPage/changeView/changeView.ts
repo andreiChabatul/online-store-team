@@ -1,6 +1,5 @@
 import State from '../../../State/State';
 import { IComponentUpdate } from '../../../types/index';
-import { changeView } from '../../../utils/AdditionalFunction';
 import CreateElement from '../../../utils/CreateElement';
 import './changeView.css';
 
@@ -39,7 +38,7 @@ export default class ChangeView implements IComponentUpdate {
         this.changeView.addEventListener('click', (e) => {
             const element = e.target as HTMLInputElement;
             const value = element.id;
-            changeView(value);
+            value === 'tile' ? State.setBig(true) : State.setBig(false);
         });
         this.fill();
         return this.changeView;

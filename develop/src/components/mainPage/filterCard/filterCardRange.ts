@@ -79,6 +79,7 @@ export default class FilterCardRange implements IComponentUpdate {
         containerValues.append(this.valuesMin, valuesLine, this.valuesMax);
         containerRange.append(sliderTrack, this.inputOne, this.inputTwo);
         result.push(this.valuesEmpty, containerValues, containerRange);
+        this.update();
         return result;
     }
 
@@ -94,7 +95,9 @@ export default class FilterCardRange implements IComponentUpdate {
     }
 
     update() {
-        this.change = createFilterNumber(State.getData(), this.category);
+        State.getFilterNumber(this.category).length === 0
+            ? (this.change = createFilterNumber(State.getData(), this.category))
+            : (this.change = State.getFilterNumber(this.category));
         this.inputOne.setAttribute('value', String(this.change[0]));
         this.inputTwo.setAttribute('value', String(this.change[1]));
         this.valuesMin.textContent = this.inputOne.value;
