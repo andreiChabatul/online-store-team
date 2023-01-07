@@ -1,8 +1,7 @@
-import itemPromoCheck from '../components/basket/promoBlock/itemPromoCheck/itemPromoCheck';
 import StateBasket from '../components/basket/StateBasket';
+import { SEARCH_FIELD } from '../CONST/const';
 import State from '../State/State';
 import {
-    searchQuery,
     IProduct,
     IPagination,
     IBasket,
@@ -10,6 +9,8 @@ import {
     IQueryPatametr,
     IObjFilter,
     IFilter,
+    priceStock,
+    brandCategory,
 } from '../types/index';
 
 export function sortCard(value: string): void {
@@ -17,7 +18,7 @@ export function sortCard(value: string): void {
     updateUrlMain.setString(value, 'sort');
 }
 
-export function filterCheck(atr: string, idParent: 'brand' | 'category') {
+export function filterCheck(atr: string, idParent: brandCategory) {
     const filter: IFilter = State.getFilter();
     filter[idParent].indexOf(atr) === -1
         ? filter[idParent].push(atr)
@@ -26,7 +27,7 @@ export function filterCheck(atr: string, idParent: 'brand' | 'category') {
     updateUrlMain.set(filter);
 }
 
-export function setFilter(atr: 'brand' | 'category', value: string): void {
+export function setFilter(atr: brandCategory, value: string): void {
     const result = value.split('%E2%86%95');
     result.forEach((element) => {
         filterCheck(element, atr);
@@ -34,14 +35,14 @@ export function setFilter(atr: 'brand' | 'category', value: string): void {
     updateUrlMain.set(State.getFilter());
 }
 
-export function setFilterNumber(atr: 'price' | 'stock', value: string): void {
+export function setFilterNumber(atr: priceStock, value: string): void {
     const result: number[] = value.split('%E2%86%95').map((i) => Number(i));
     result.sort((a, b) => a - b);
     State.setFilterNumber(result, atr);
     updateUrlMain.setPriceAndStock(result, atr);
 }
 
-export function createFilter(data: IProduct[], atr: 'brand' | 'category'): IObjFilter {
+export function createFilter(data: IProduct[], atr: brandCategory): IObjFilter {
     const obj: IObjFilter = {};
 
     data.forEach((element) => {
@@ -57,7 +58,7 @@ export function createFilter(data: IProduct[], atr: 'brand' | 'category'): IObjF
     return obj;
 }
 
-export function filterWork(data: IProduct[], atr: 'brand' | 'category', filter: string[]): IProduct[] {
+export function filterWork(data: IProduct[], atr: brandCategory, filter: string[]): IProduct[] {
     let result: IProduct[] = [];
     if (filter.length > 0) {
         filter.forEach((filt) => {
@@ -70,7 +71,7 @@ export function filterWork(data: IProduct[], atr: 'brand' | 'category', filter: 
     }
 }
 
-export function createFilterNumber(arr: IProduct[], atr: 'stock' | 'price'): number[] {
+export function createFilterNumber(arr: IProduct[], atr: priceStock): number[] {
     let result: number[] = [];
     arr.forEach((element) => {
         result.push(element[atr]);
@@ -80,7 +81,7 @@ export function createFilterNumber(arr: IProduct[], atr: 'stock' | 'price'): num
     return result;
 }
 
-export function filterWorkNumber(data: IProduct[], atr: 'price' | 'stock', filter: number[]): IProduct[] {
+export function filterWorkNumber(data: IProduct[], atr: priceStock, filter: number[]): IProduct[] {
     if (filter.length > 0) {
         const result: IProduct[] = [];
         data.forEach((element) => {
@@ -101,9 +102,7 @@ export function searchEnter(value: string): void {
 
 export function search(data: IProduct[], query: string): IProduct[] {
     const result: IProduct[] = [];
-    const searchField: searchQuery[] = ['title', 'description', 'brand', 'category'];
-
-    searchField.forEach((searchField) => {
+    SEARCH_FIELD.forEach((searchField) => {
         data.forEach((element) => {
             if (element[searchField].toLowerCase().includes(query.toLowerCase())) {
                 result.push(element);
@@ -113,24 +112,10 @@ export function search(data: IProduct[], query: string): IProduct[] {
     return [...new Set(result)];
 }
 
-export function pagination(data: IProduct[], obj: IPagination): IProduct[] {
+export function pagination<T>(data: T[], obj: IPagination): T[] {
     const init: number = obj.amount * obj.selectPage;
     const end: number = init + obj.amount;
     return data.slice(init, end);
-}
-
-export function paginationBasket(data: IBasket[], obj: IPagination): IBasket[] {
-    const init: number = obj.amount * obj.selectPage;
-    const end: number = init + obj.amount;
-    return data.slice(init, end);
-}
-
-export function changeView(id: string) {
-    if (id === 'tile') {
-        State.setBig(true);
-    } else {
-        State.setBig(false);
-    }
 }
 
 export function addBasket(id: number): void {
@@ -157,16 +142,6 @@ export function closeCart(obj: IBasket): void {
     obj.amount = 0;
     StateBasket.changeAmount();
     StateBasket.setPagePagination('update');
-}
-
-export function enterPromo(value: string, element: HTMLButtonElement): void {
-    console.log(value);
-    if (value) {
-        element.classList.add('promo-search__reset_active');
-    } else {
-        element.classList.remove('promo-search__reset_active');
-    }
-    itemPromoCheck.check(value);
 }
 
 class AddBasketUrlParametr {
