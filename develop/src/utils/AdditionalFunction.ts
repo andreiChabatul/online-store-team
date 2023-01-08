@@ -30,7 +30,7 @@ export function filterCheck(atr: string, idParent: brandCategory) {
 export function setFilter(atr: brandCategory, value: string): void {
     const result = value.split('%E2%86%95');
     result.forEach((element) => {
-        filterCheck(element, atr);
+        filterCheck(element.replace(/%20/g, ' '), atr);
     });
     updateUrlMain.set(State.getFilter());
 }
