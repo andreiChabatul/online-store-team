@@ -43,7 +43,7 @@ export const POP_UP: IPopUpItem[] = [
     },
     {
         name: 'email',
-        regEx: '^\\w+([.-]?\\w+)*@\\w+([.-]?\\w+)*(.\\w{2,3})+$',
+        regEx: '^[\\w.%+-]+@[\\w.-]+\\.[\\w]{2,6}$',
         placeHolder: 'E-mail',
         maxLenght: 'Infinity',
     },
