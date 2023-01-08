@@ -1,0 +1,131 @@
+.moreinfo-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vw;
+}
+
+.moreinfo-card-container {
+  width: 70vw;
+  height: 350px;
+  margin: 0 auto;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--COLOR_BACKGROUND);
+  border: solid 2px var(--COLOR_BACKGROUND_BLACK);
+  border-radius: 10px;
+}
+
+.moreinfo-product-data {
+  padding: 0 3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1vw;
+  height: 85%;
+}
+
+.moreinfo-text {
+  font-size: 14px;
+  color: var(--COLOR_FONT_BLACK);
+}
+
+.moreinfo-title {
+  font-size: 26px;
+  font-family: sans-serif;
+  margin-bottom: 5px;
+}
+
+.moreinfo-prodact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+
+.moreinfo-prodact-info {
+  width: 45%;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  display: flex;
+}
+
+.moreinfo-buttons-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.moreinfo-button {
+  font-size: 16px;
+  width: 48%;
+  text-transform: uppercase;
+  cursor: pointer;
+  height: 30px;
+  background-color: var(--COLOR_DEFAULT);
+  color: var(--COLOR_BACKGROUND);
+  border-radius: 5px;
+  border: solid 2px var(--COLOR_BACKGROUND_BLACK);
+  transition: 0.4s;
+}
+
+.moreinfo-button_active {
+  background-color: var(--BUTTON_ACTIVE);
+}
+
+.moreinfo-button:hover {
+  background: var(--BUTTON_ACTIVE);
+  transform: scale(1.05);
+}
+
+.moreinfo-item {
+  font-weight: bold;
+}
+
+.moreinfo-item-value {
+  font-weight: 400;
+}
+
+.moreinfo-bread-crumb-cont {
+  display: flex;
+}
+
+.moreinfo-bread-crumb-item {
+  text-transform: uppercase;
+  color: var(--COLOR_FONT_BLACK);
+}
+
+@media (max-width: 920px) {
+  .moreinfo-button {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 800px) {
+  .moreinfo-card-container {
+    height: 580px;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .moreinfo-product-data {
+    display: block;
+  }
+
+  .moreinfo-prodact-info {
+    height: 60%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .moreinfo-buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .moreinfo-button {
+    width: 90%;
+  }
+}
