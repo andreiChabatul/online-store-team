@@ -96,7 +96,7 @@ export function filterWorkNumber(data: IProduct[], atr: priceStock, filter: numb
 }
 
 export function searchEnter(value: string): void {
-    State.setSearch(value);
+    State.setSearch(value.replace(/%20/g, ' '));
     updateUrlMain.setString(value, 'srch');
 }
 
