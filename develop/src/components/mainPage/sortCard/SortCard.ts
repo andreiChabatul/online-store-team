@@ -1,4 +1,4 @@
-import State from '../../../State/State';
+import { State } from '../../../State/State';
 import { IRenderComponent } from '../../../types/index';
 import { sortCard } from '../../../utils/AdditionalFunction';
 import CreateElement from '../../../utils/CreateElement';

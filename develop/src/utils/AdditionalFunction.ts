@@ -1,6 +1,6 @@
 import StateBasket from '../components/basket/StateBasket';
 import { SEARCH_FIELD } from '../CONST/const';
-import State from '../State/State';
+import { State } from '../State/State';
 import {
     IProduct,
     IPagination,

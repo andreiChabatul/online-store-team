@@ -1,6 +1,6 @@
 import RatingStar from '../../../common-components/ratingStar/ratingStar';
 import router from '../../../router/router';
-import State from '../../../State/State';
+import { State } from '../../../State/State';
 import { IBasket, IProduct, IRenderComponent } from '../../../types/index';
 import { closeCart } from '../../../utils/AdditionalFunction';
 import CreateElement from '../../../utils/CreateElement';

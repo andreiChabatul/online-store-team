@@ -1,4 +1,4 @@
-import State from '../../../State/State';
+import { State } from '../../../State/State';
 import { IRenderComponentForm } from '../../../types/index';
 import { searchEnter } from '../../../utils/AdditionalFunction';
 import CreateElement from '../../../utils/CreateElement';

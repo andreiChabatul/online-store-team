@@ -9,7 +9,7 @@ import {
     updateUrlMain,
 } from '../utils/AdditionalFunction';
 
-class State {
+export class StateMain {
     private data: IProduct[];
     private actions: IComponentUpdate[];
     private changeData: IProduct[];
@@ -216,4 +216,4 @@ class State {
     }
 }
 
-export default new State();
+export const State = new StateMain();

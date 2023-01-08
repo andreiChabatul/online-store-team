@@ -1,4 +1,4 @@
-import State from '../../../State/State';
+import { State } from '../../../State/State';
 import StateBasket from '../../basket/StateBasket';
 import CreateElement from '../../../utils/CreateElement';
 import { addBasket } from '../../../utils/AdditionalFunction';

@@ -6,7 +6,7 @@ import router from '../../router/router';
 import { updateUrl, updateUrlMain } from '../../utils/AdditionalFunction';
 import { IComponentUpdate } from '../../types/index';
 import './header.css';
-import State from '../../State/State';
+import { State } from '../../State/State';
 
 export default class Header implements IComponentUpdate {
     header: HTMLDivElement;

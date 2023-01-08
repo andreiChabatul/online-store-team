@@ -1,4 +1,4 @@
-import State from '../../../State/State';
+import { State } from '../../../State/State';
 import { IRenderComponentSelect } from '../../../types/index';
 import CreateElement from '../../../utils/CreateElement';
 import './selectAmount.css';

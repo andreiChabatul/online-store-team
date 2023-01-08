@@ -1,4 +1,4 @@
-import State from '../../../State/State';
+import { State } from '../../../State/State';
 import { IComponentUpdate } from '../../../types/index';
 import { createFilterNumber, setFilterNumber } from '../../../utils/AdditionalFunction';
 import CreateElement from '../../../utils/CreateElement';

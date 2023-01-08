@@ -1,5 +1,5 @@
 import router from '../../../router/router';
-import State from '../../../State/State';
+import { State } from '../../../State/State';
 import { IRenderComponent } from '../../../types/index';
 import CreateElement from '../../../utils/CreateElement';
 import FilterCard from '../filterCard/filterCard';

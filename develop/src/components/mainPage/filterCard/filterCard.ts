@@ -1,4 +1,4 @@
-import State from '../../../State/State';
+import { State } from '../../../State/State';
 import { IComponentUpdate, IFilterText, IObjFilter } from '../../../types/index';
 import { createFilter, filterCheck } from '../../../utils/AdditionalFunction';
 import CreateElement from '../../../utils/CreateElement';

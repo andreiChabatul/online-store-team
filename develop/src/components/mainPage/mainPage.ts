@@ -1,4 +1,4 @@
-import State from '../../State/State';
+import { State } from '../../State/State';
 import CreateElement from '../../utils/CreateElement';
 import ChangeView from './changeView/changeView';
 import fabricCardsMain from './fabricCardsMain/fabricCardsMain';

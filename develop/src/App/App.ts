@@ -1,4 +1,4 @@
-import State from '../State/State';
+import { State } from '../State/State';
 import { URL_API } from '../CONST/const';
 import ApiLoader from '../utils/ApiLoader';
 import InitPage from '../pages/initPage/initPage';
