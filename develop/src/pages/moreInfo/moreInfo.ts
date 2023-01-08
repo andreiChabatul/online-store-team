@@ -75,6 +75,7 @@ export default class moreInfoCard implements IRenderComponent {
         buyButton.addEventListener('click', () => {
             !StateBasket.getBasketId().includes(this.obj.id) ? StateBasket.setBasket(this.obj.id, this.obj.price) : '';
             StateBasket.setIsBuyOpen(true);
+            history.pushState({}, document.title, window.location.origin + '/cart');
             App.basketDone();
         });
 
