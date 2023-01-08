@@ -4,7 +4,7 @@ import sberCard from '../assets/img/sberCard.png';
 import tinCard from '../assets/img/tinCard.png';
 
 export const BODY = document.querySelector('body');
-export const URL_API = 'https://dummyjson.com/products?limit=25';
+export const URL_API = 'https://productsonline-ce884-default-rtdb.europe-west1.firebasedatabase.app/products.json';
 export const PROMO_CODE: IPromoCode[] = [
     {
         name: 'RS',

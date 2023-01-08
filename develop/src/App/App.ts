@@ -17,7 +17,7 @@ class App {
     async run() {
         if (State.getInitData().length === 0) {
             const data = await ApiLoader.getData(URL_API);
-            State.setData(data.products);
+            State.setData(data);
         }
         const mainPage = new MainPage();
         this.initPage.add(mainPage.render());
@@ -30,7 +30,7 @@ class App {
     async basketDone() {
         if (State.getInitData().length === 0) {
             const data = await ApiLoader.getData(URL_API);
-            State.setData(data.products);
+            State.setData(data);
         }
         const basket = new Basket();
         this.initPage.add(basket.get());
@@ -39,7 +39,7 @@ class App {
     async moreInfo(id: number) {
         if (State.getInitData().length === 0) {
             const data = await ApiLoader.getData(URL_API);
-            State.setData(data.products);
+            State.setData(data);
         }
         let moreInfo: HTMLDivElement;
         id > State.getInitData().length
