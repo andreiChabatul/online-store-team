@@ -30,7 +30,6 @@ export default class Slider implements IRenderComponent {
                     const activeSlide = document.getElementById(`${a}`) as HTMLImageElement;
                     a = productImgSLide1.id;
                     productImgGrand.src = productImgSLide1.src;
-                    console.log(activeSlide);
                     productImgSLide1.classList.add('moreinfo-active-slide');
                     activeSlide.classList.remove('moreinfo-active-slide');
                 }

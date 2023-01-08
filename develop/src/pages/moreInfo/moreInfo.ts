@@ -20,7 +20,6 @@ export default class moreInfoCard implements IRenderComponent {
         const cardContainer = CreateElement.createDivElement('moreinfo-card-container');
         const prodactTitle = CreateElement.createDivElement('moreinfo-prodact-title');
         const h3 = CreateElement.createH1Element('moreinfo-title', `${this.obj.title}`);
-        const prodactData = CreateElement.createDivElement('moreinfo-product-data');
         const prodactInfo = CreateElement.createDivElement('moreinfo-prodact-info');
         const prodactInfoList = CreateElement.createDivElement('moreinfo-prodact-info-list');
         const buttonsContainer = CreateElement.createDivElement('moreinfo-buttons-container');
@@ -81,9 +80,8 @@ export default class moreInfoCard implements IRenderComponent {
 
         moreinfoCardContainer.append(breadCrumbCont, cardContainer);
         breadCrumbCont.append(breadCrumbItem);
-        cardContainer.append(prodactTitle, prodactData);
+        cardContainer.append(prodactTitle, slider, prodactInfo);
         prodactTitle.append(h3, rating);
-        prodactData.append(slider, prodactInfo);
         prodactInfo.append(prodactInfoList, buttonsContainer);
 
         prodactInfoList.append(
