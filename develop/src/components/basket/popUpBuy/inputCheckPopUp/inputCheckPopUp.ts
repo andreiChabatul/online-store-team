@@ -35,7 +35,9 @@ export default class InputCheckPopUp {
                 (e) => {
                     inputReset.classList.add('input-popUp__reset_active');
                     this.check(this.input.value);
-                    this.obj.name === 'numberCard' || this.obj.name === 'dataCard' ? this.replaceChar(e) : '';
+                    this.obj.name === 'CVV' || this.obj.name === 'numberCard' || this.obj.name === 'dataCard'
+                        ? this.replaceChar(e)
+                        : '';
                 },
                 false
             );
