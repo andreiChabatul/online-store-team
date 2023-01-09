@@ -42,7 +42,7 @@ class App {
             State.setData(data);
         }
         let moreInfo: HTMLDivElement;
-        id > State.getInitData().length
+        id > State.getInitData().length || id === 0
             ? (moreInfo = new NoProductsInfo(id).render())
             : (moreInfo = new moreInfoCard(State.getInitData()[id - 1]).render());
         this.initPage.add(moreInfo);
