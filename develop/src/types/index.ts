@@ -85,14 +85,6 @@ export interface IProduct {
     images: string[],
 }
 
-export interface IResultQueryPatametr {
-    brand?: string,
-    category?: string,
-    srch?: string,
-    price?: string,
-    stock?: string,
-    sort?: string,
-}
 
 export interface IQueryPatametr {
     limit?: string,
@@ -103,6 +95,7 @@ export interface IQueryPatametr {
     category?: string,
     price?: string,
     stock?: string,
+    big?: string,
 }
 
 export interface IFilterText {

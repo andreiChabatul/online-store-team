@@ -2,7 +2,14 @@ import App from '../App/App';
 import StateBasket from '../components/basket/StateBasket';
 import Page404 from '../pages/404/404';
 import { IQueryPatametr } from '../types/index';
-import { parserUrl, searchEnter, setFilter, setFilterNumber, sortCard } from '../utils/AdditionalFunction';
+import {
+    changeViewFunc,
+    parserUrl,
+    searchEnter,
+    setFilter,
+    setFilterNumber,
+    sortCard,
+} from '../utils/AdditionalFunction';
 
 export function openBasket(): void {
     const query: string = window.location.search;
@@ -21,6 +28,7 @@ export function openMain() {
     parametrs.category ? setFilter('category', parametrs.category) : '';
     parametrs.price ? setFilterNumber('price', parametrs.price) : '';
     parametrs.stock ? setFilterNumber('stock', parametrs.stock) : '';
+    parametrs.big ? changeViewFunc(parametrs.big) : '';
     App.run();
 }
 

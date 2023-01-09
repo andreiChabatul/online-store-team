@@ -5,7 +5,6 @@ import {
     IProduct,
     IPagination,
     IBasket,
-    IResultQueryPatametr,
     IQueryPatametr,
     IObjFilter,
     IFilter,
@@ -138,6 +137,13 @@ export function changeAmountFunc(id: string, obj: IBasket, stock: number): void 
     StateBasket.setPagePagination('update');
 }
 
+export function changeViewFunc(value: string | undefined) {
+    if (value) {
+        value === 'tile' ? State.setBig(true) : State.setBig(false);
+        updateUrlMain.setChangeView(value);
+    }
+}
+
 export function closeCart(obj: IBasket): void {
     obj.amount = 0;
     StateBasket.changeAmount();
@@ -206,6 +212,9 @@ export function parserUrl(query: string) {
             case 'stock':
                 resultObj[indexObj] = parametr;
                 break;
+            case 'big':
+                resultObj[indexObj] = parametr;
+                break;
         }
     });
     return resultObj;
@@ -213,7 +222,7 @@ export function parserUrl(query: string) {
 
 class AddMainUrlParametr {
     resultStr: string;
-    result: IResultQueryPatametr;
+    result: IQueryPatametr;
 
     constructor() {
         this.result = {};
@@ -224,13 +233,18 @@ class AddMainUrlParametr {
         this.result = {};
     }
 
+    setChangeView(value: string) {
+        this.result.big = `big=${value}`;
+        this.update();
+    }
+
     setString(query: string, atr: string) {
         switch (atr) {
             case 'sort':
                 this.result.sort = `sort=${query}`;
                 break;
             case 'srch':
-                query ? (this.result.srch = `search=${query}`) : delete this.result.srch;
+                query ? (this.result.search = `search=${query}`) : delete this.result.search;
                 break;
         }
         this.update();
