@@ -62,7 +62,7 @@ export default class FilterCard implements IComponentUpdate {
         const span = CreateElement.createDivElement('filter-container__span');
         const spanOne = CreateElement.createSpanElement('filter__span_one', `(${obj.quantity}`);
         const spanTwo = CreateElement.createSpanElement('filter__span_two', `/${obj.quantity})`);
-
+        label.setAttribute('for', obj.name);
         input.addEventListener('change', () => {
             input.value === 'brand' || input.value === 'category' ? filterCheck(input.id, input.value) : '';
         });
