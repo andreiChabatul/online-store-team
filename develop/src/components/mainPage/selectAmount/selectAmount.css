@@ -1,0 +1,12 @@
+.card-container__amount {
+  position: relative;
+  right: 70px;
+}
+
+
+
+@media (max-width: 1350px) {
+  .card-container__amount {
+    right: 0px;
+  }
+}

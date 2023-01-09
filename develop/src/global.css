@@ -1,0 +1,24 @@
+.body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    height: 100%;
+    justify-content: space-between;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: var(--COLOR_DEFAULT);
+}
+
+@media (max-width:900px) {
+    .body {
+        row-gap: 20px;
+    }
+  
+  }

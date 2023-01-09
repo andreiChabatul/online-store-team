@@ -1,0 +1,16 @@
+.container-noFounds__text {
+  font-size: 28px;
+  color: var(--COLOR_FONT_BLACK);
+  border-radius: 10px;
+  border: solid 2px var(--COLOR_BACKGROUND_BLACK);
+  padding: 3%;
+  white-space: nowrap;
+  width: min-content;
+  background: var(--COLOR_BACKGROUND_GREY);
+}
+
+@media (max-width: 500px) {
+  .container-noFounds__text {
+    font-size: 22px;
+  }
+}

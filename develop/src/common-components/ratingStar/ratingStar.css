@@ -1,0 +1,26 @@
+.rating__container {
+    width: 75px;
+    height: 15px;
+    position: relative;
+    background: var(--COLOR_BACKGROUND_BLACK);
+}
+
+.rating__img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.rating__one {
+    top: 0;
+    position: absolute;
+    height: 100%;
+    background: var(--COLOR_ORANGE);
+}
+
+.rating__text {
+    position: absolute;
+    left: 80px;
+    font-size: 16px;
+    color: var(--COLOR_FONT_BLACK);
+}

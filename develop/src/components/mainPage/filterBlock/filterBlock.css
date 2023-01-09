@@ -1,0 +1,114 @@
+.filter-block-container {
+  width: 24%;
+  background: var(--COLOR_BACKGROUND);
+}
+
+.filter-block-container__one {
+  background: var(--COLOR_BACKGROUND_GREY);
+  margin-bottom: 2%;
+  height: 155px;
+  border: solid 2px var(--COLOR_BACKGROUND_BLACK);
+  border-radius: 10px;
+}
+
+.filter-block-container__two {
+  background: var(--COLOR_BACKGROUND_GREY);
+  margin-bottom: 2%;
+  height: 85px;
+  border: solid 2px var(--COLOR_BACKGROUND_BLACK);
+  border-radius: 10px;
+}
+
+.filter-block-container_title {
+  background-color: var(--COLOR_DEFAULT);
+  color: var(--COLOR_BACKGROUND);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin-bottom: 2%;
+  padding: 1%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: 'GilroyBold';
+}
+
+.filter-block-container__button {
+  background: var(--COLOR_BACKGROUND_GREY);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 10px;
+  border: solid 2px var(--COLOR_BACKGROUND_BLACK);
+  height: 40px;
+  margin-bottom: 2%;
+}
+
+.filter-button {
+  cursor: pointer;
+  height: 30px;
+  width: 120px;
+  background-color: var(--COLOR_DEFAULT);
+  color: var(--COLOR_BACKGROUND);
+  border-radius: 5px;
+  border: solid 2px var(--COLOR_BACKGROUND_BLACK);
+  transition: .4s;
+}
+
+.filter-button:hover {
+  background-color: var(--BUTTON_ACTIVE);
+  transform: scale(1.05);
+}
+
+.filter-button_active {
+  background-color: var(--BUTTON_ACTIVE);
+  transform: scale(1.05);
+}
+
+
+@media (max-width: 900px) {
+  .filter-block-container__button {
+    height: 50px;
+  }
+
+
+  .filter-button {
+    font-size: 14px;
+    width: 45%;
+    height: 40px;
+  }
+
+  .filter-block-container {
+    width: 99%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    column-gap: 5px;
+  }
+
+  .filter-block-container__one {
+    height: 225px;
+  }
+  
+
+  .block__brand {
+    grid-row-start: 1;
+    grid-row-end: 4;
+    grid-column-start: 2;
+  }
+
+  .block__category {
+    grid-row-start: 1;
+    grid-row-end: 4;
+    grid-column-start: 3;
+  }
+
+  .block__stock {
+    grid-column-start: 1;
+    grid-row-start: 2;
+  }
+
+  .block__price {
+    grid-column-start: 1;
+    grid-row-start: 3;
+  }
+}
