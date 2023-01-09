@@ -41,6 +41,15 @@ const baseConfig = {
         }),
         new CleanWebpackPlugin(),
         new EslingPlugin({ extensions: 'ts' }),
+        new NetlifyPlugin({
+            redirects: [
+                {
+                    from: '/*',
+                    to: '/index.html',
+                    status: 200,
+                },
+            ],
+        }),
     ],
 };
 
