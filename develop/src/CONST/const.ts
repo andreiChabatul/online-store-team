@@ -70,4 +70,4 @@ export const POP_UP_CARD: IPopUpItem[] = [
 ];
 export const CARD_IMG: string[] = [mirCard, tinCard, sberCard];
 export const eventsInput: string[] = ['blur', 'input', 'change'];
-export const SEARCH_FIELD: searchField[] = ['title', 'description', 'brand', 'category'];
+export const SEARCH_FIELD: searchField[] = ['title', 'description', 'brand', 'category', 'price', 'description'];

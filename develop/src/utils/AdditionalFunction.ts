@@ -104,7 +104,7 @@ export function search(data: IProduct[], query: string): IProduct[] {
     const result: IProduct[] = [];
     SEARCH_FIELD.forEach((searchField) => {
         data.forEach((element) => {
-            if (element[searchField].toLowerCase().includes(query.toLowerCase())) {
+            if (String(element[searchField]).toLowerCase().includes(query.toLowerCase())) {
                 result.push(element);
             }
         });
