@@ -2,7 +2,6 @@ import { State } from '../../../State/State';
 import { IRenderComponent } from '../../../types/index';
 import { sortCard } from '../../../utils/AdditionalFunction';
 import CreateElement from '../../../utils/CreateElement';
-import './sortCard.css';
 
 export default class SortCard implements IRenderComponent {
     render(): HTMLDivElement {
