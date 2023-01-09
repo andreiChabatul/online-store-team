@@ -21,7 +21,7 @@ export default class Header implements IComponentUpdate {
         );
         this.headerBasketText = CreateElement.createParagraphElement(
             'basket-quantity_text',
-            StateBasket.getAmountProducts()
+            StateBasket.getAmountProducts() || '0'
         );
     }
 
@@ -61,8 +61,8 @@ export default class Header implements IComponentUpdate {
     }
 
     update() {
-        this.headerTotalPrice.textContent = (StateBasket.getFinishPrice() * StateBasket.getDiscount()).toFixed(2);
-        this.headerBasketText.textContent = String(StateBasket.getAmountProducts());
+        this.headerTotalPrice.textContent = StateBasket.getFinishPrice().toFixed(2);
+        this.headerBasketText.textContent = String(StateBasket.getAmountProducts() || '0');
     }
 
     fill() {
