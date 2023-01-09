@@ -17,7 +17,7 @@ export default class Header implements IComponentUpdate {
         this.header = CreateElement.createDivElement('header-wraper');
         this.headerTotalPrice = CreateElement.createSpanElement(
             'header-total__text',
-            (StateBasket.getFinishPrice() * StateBasket.getDiscount()).toFixed(2)
+            StateBasket.getFinishPrice().toFixed(2)
         );
         this.headerBasketText = CreateElement.createParagraphElement(
             'basket-quantity_text',
