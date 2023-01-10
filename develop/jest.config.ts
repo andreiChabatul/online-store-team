@@ -1,4 +1,4 @@
-import type {Config} from './develop/node_modules/@jest/types/build/index';
+import type {Config} from './node_modules/@jest/types/build/index';
 
 const config: Config.InitialOptions = {
   verbose: true,
